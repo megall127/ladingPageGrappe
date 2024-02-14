@@ -10,20 +10,28 @@ import imageBg from "./Assets/image.png";
 import GlobalStyle from './globalStyled';
 
 const AppContainer = styled.div`
-  text-align: center;
   background-color: #791D43;
   background-image: url(${imageBg});
-  background-repeat: repeat-y; /* Isso fará com que a imagem se repita verticalmente */
-  background-size: contain; /* Ajuste conforme necessário */
+  background-repeat: repeat-y; 
+
+  @media (max-width: 768px) {// Altera para cover em dispositivos menores se necessário
+    background-size: contain;
+    background-repeat: repeat; 
+  }
 `;
 
 const Item = styled.div`
-  height: 200px; /* Adjust as needed */
-  background-color: #ddd; /* Just for demonstration */
+  height: 200px;
+  background-color: #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
+
+  @media (max-width: 768px) {
+    height: 150px; // Ajusta a altura para dispositivos menores
+    font-size: 20px; // Ajusta o tamanho da fonte para dispositivos menores
+  }
 `;
 
 function App() {
@@ -32,10 +40,10 @@ function App() {
       <GlobalStyle />
       <AppContainer>
         <Menu />
-        <div id="section1" style={{ width: '100%' }}>
+        {/* <div id="section1" style={{ width: '100%' }}>
           <Section color="transparent" title="Seção 1" />
-        </div>
-        <div id="section2">
+        </div> */}
+        {/* <div id="section2">
           <Section2 color="white" title="Seção 2" />
         </div>
         <div id="section3">
@@ -43,7 +51,7 @@ function App() {
         </div>
         <div id="section4">
           <Section4 color="white" title="Seção 4" />
-        </div>
+        </div> */}
       </AppContainer>
     </>
   );

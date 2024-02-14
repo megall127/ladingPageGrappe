@@ -18,56 +18,86 @@ const SectionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  // Media query para telas menores
+  @media (max-width: 768px) {
+    height: auto;
+    flex-direction: column;
+  }
 `;
 
 const ImageWithShadow = styled.img`
   height: 80%;
-  width: 130px;
+  width: 25%;
   margin: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+
+  // Ajuste para telas menores
+  @media (max-width: 768px) {
+    height: 10%;
+  }
 `;
 
-    
+
+const ImageOne = styled.div`
+
+
+`
+
+const SlideOne = styled.div`
+    height: 100%;
+    width: 70%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media (max-width: 768px) {
+    position: absolute;
+    margin-right: 20%;
+  }
+`
+
 
 const Section = ({ color, title, children }) => {
     return (
         <SectionContainer bgColor={color}>
-            <AutoCarousel>
-                <div style={{ height: 400, width: "60%", backgroundColor: "white", borderRadius: 20, display: "flex", flexDirection: "row", alignItems: "center" }}>
-                    <div style={{ width: '70%' }}>
+            {/* <AutoCarousel>
+                <SlideOne>
+                    <ImageOne style={{ width: '60%' }}>
                         <ImageWithShadow src={print1} />
                         <ImageWithShadow src={print2} />
-                        <ImageWithShadow src={print3} />
                         <ImageWithShadow src={print4} />
-                    </div>
-                    <div style={{ width: '30%', display: "flex", flexDirection: "column" , justifyContent: "center", alignItems: "center", backgroundColor:'white', marginRight: 10}}>
+                    </ImageOne>
+                    <div style={{ width: '30%', display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundColor: 'white', marginRight: 10 }}>
                         <img style={{ height: '80px', width: '150px' }} src={lndLogo} />
-                        <text style={{fontWeight: "700", fontSize: 20, marginTop: 20}}>Aplicativo de gestão</text>
-                        <text style={{textAlign: "center"}}>APP de gestão de desempenho dos monitores da escola de dança ‘la na dança’.</text>
+                        <text style={{ fontWeight: "700", fontSize: 20, marginTop: 20 }}>Aplicativo de gestão</text>
+                        <text style={{ textAlign: "center" }}>APP de gestão de desempenho dos monitores da escola de dança ‘la na dança’.</text>
+                    </div>
+                </SlideOne>
+                <div style={{ height: 400, width: "60%", backgroundColor: "white", borderRadius: 20, display: "flex", flexDirection: "row", alignItems: "center" }}>
+                    <div style={{ width: '70%' }}>
+                        <ImageWithShadow style={{ width: '80%' }} src={print5} />
+                    </div>
+                    <div style={{ width: '30%', display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundColor: 'white', marginRight: 10 }}>
+                        <img style={{ height: 100 }} src={btfLogo} />
+                        <text style={{ fontWeight: "700", fontSize: 20 }}>Lading Page</text>
+                        <text style={{ textAlign: "center", marginTop: 10 }}>Pagina de vendas e informação para evento de dança!</text>
                     </div>
                 </div>
                 <div style={{ height: 400, width: "60%", backgroundColor: "white", borderRadius: 20, display: "flex", flexDirection: "row", alignItems: "center" }}>
-                <div style={{ width: '70%' }}>
-                        <ImageWithShadow style={{width: '80%'}} src={print5} />
+                    <div style={{ width: '70%' }}>
+                        <ImageWithShadow style={{ width: '80%' }} src={lezzesPrint1} />
                     </div>
-                    <div style={{ width: '30%', display: "flex", flexDirection: "column" , justifyContent: "center", alignItems: "center", backgroundColor:'white', marginRight: 10}}>
-                        <img style={{ height: 100}} src={btfLogo} />
-                        <text style={{fontWeight: "700", fontSize: 20}}>Lading Page</text>
-                        <text style={{textAlign: "center", marginTop: 10}}>Pagina de vendas e informação para evento de dança!</text>
-                    </div>
-                </div>
-                <div style={{ height: 400, width: "60%", backgroundColor: "white", borderRadius: 20, display: "flex", flexDirection: "row", alignItems: "center" }}>
-                <div style={{ width: '70%' }}>
-                        <ImageWithShadow style={{width: '80%'}} src={lezzesPrint1} />
-                    </div>
-                    <div style={{ width: '30%', display: "flex", flexDirection: "column" , justifyContent: "center", alignItems: "center", backgroundColor:'white', marginRight: 10}}>
-                        <img style={{ height: 100}} src={lezzesLogo} />
-                        <text style={{fontWeight: "700", fontSize: 20}}>Streaming</text>
-                        <text style={{textAlign: "center", marginTop: 10}}>Desenvolvimento de sistema de exibição de filme.</text>
+                    <div style={{ width: '30%', display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundColor: 'white', marginRight: 10 }}>
+                        <img style={{ height: 100 }} src={lezzesLogo} />
+                        <text style={{ fontWeight: "700", fontSize: 20 }}>Streaming</text>
+                        <text style={{ textAlign: "center", marginTop: 10 }}>Desenvolvimento de sistema de exibição de filme.</text>
                     </div>
                 </div>
-            </AutoCarousel>
+            </AutoCarousel> */}
         </SectionContainer>
     );
 };

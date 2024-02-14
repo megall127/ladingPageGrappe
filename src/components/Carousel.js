@@ -3,8 +3,12 @@ import styled from 'styled-components';
 
 const CarouselContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 90%;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+  width: 30%;
+  }
 `;
 
 const CarouselInner = styled.div`
@@ -18,6 +22,10 @@ const CarouselItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+   display: flex;
+  }
 `;
 
 const AutoCarousel = ({ children }) => {
@@ -26,18 +34,18 @@ const AutoCarousel = ({ children }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % React.Children.count(children));
-    }, 5000); // Muda de item a cada 2 segundos
+    }, 15000); // Muda de item a cada 2 segundos
 
     return () => clearInterval(interval);
   }, [children]);
 
   return (
     <CarouselContainer>
-      <CarouselInner style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+      {/* <CarouselInner style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
         {React.Children.map(children, (child) => (
           <CarouselItem>{child}</CarouselItem>
         ))}
-      </CarouselInner>
+      </CarouselInner> */}
     </CarouselContainer>
   );
 };
