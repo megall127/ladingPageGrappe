@@ -13,12 +13,27 @@ const SectionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+
+  }
+
+  
 `;
 
 const CircleRow = styled.div`
   display: flex;
   justify-content: center;
   margin: 10px 0;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    margin: 0;
+
+    div {margin-bottom: 10px}
+
+  }
 `;
 
 const Circle = styled.div`
@@ -50,7 +65,7 @@ const TeamContainer = styled.div`
 
 const InfoContainer = styled.div`
   width: 30%;
-  height: 500px;
+  padding: 20px;
   margin-top: 200px;
   margin-right: 50px;
   display: flex;
@@ -59,6 +74,12 @@ const InfoContainer = styled.div`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6); // Sombra sutil
   background-color: #540023;
   border-radius: 20px;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+    margin-top: 50px;
+    margin-right: 0;
+  }
 `;
 
 
@@ -70,8 +91,7 @@ const Title = styled.h2`
 const Description = styled.p`
   color: white;
   text-align: center;
-  margin-left: 40px;
-  margin-right: 40px;
+
 `;
 
 

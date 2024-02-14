@@ -43,15 +43,15 @@ function App() {
         {/* <div id="section1" style={{ width: '100%' }}>
           <Section color="transparent" title="Seção 1" />
         </div> */}
-        {/* <div id="section2">
+         <div id="section2">
           <Section2 color="white" title="Seção 2" />
         </div>
-        <div id="section3">
+        {/*<div id="section3">
           <Section3 color="transparent" title="Seção 3" />
         </div>
         <div id="section4">
           <Section4 color="white" title="Seção 4" />
-        </div> */}
+      </div> */}
       </AppContainer>
     </>
   );
